@@ -1,0 +1,103 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  color: rgb(255, 54, 173);
+}
+
+body {
+  background-color: rgb(163, 255, 241);
+}
+
+a {
+  color: rgb(255, 54, 173);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.top_list {
+  width: 32vw;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Rank Number */
+.item h3 {
+  width: 50px;
+  margin-bottom: 0;
+  font-size: 2rem;
+}
+
+.item img {
+  width: 100px;
+  height: 100px;
+  margin-left: 25px;
+}
+
+.top-artist-name {
+  margin-left: 20px;
+  margin-bottom: 0;
+  height: 100px;
+  width: 250px;
+  --font-size: 1.2rem;
+  font-size: var(--font-size);
+
+  /* Text cutoff */
+  --max-lines: 2;
+  --line-height: 1.4;
+
+  max-height: calc(var(--max-lines) * var(--font-size) * var(--line-height));
+  line-height: var(--line-height);
+
+  align-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item h3,
+.item img,
+.item .top-artist-name,
+.track-details {
+  display: inline-block;
+}
+
+.track-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  height: 100px;
+  width: 255px;
+  justify-content: center;
+}
+
+.track-details h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+
+  /* Text cutoff */
+  --max-lines: 2;
+
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-lines);
+}
+
+.artist-name {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+
+  /* Text cutoff */
+  --max-lines: 1;
+
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-lines);
+}
