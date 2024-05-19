@@ -18,6 +18,7 @@ load_dotenv()
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 REDIRECT_URI = "http://KEWWWY.pythonanywhere.com/callback"
+# REDIRECT_URI = "http://localhost:5000/callback"
 SCOPE = "user-top-read"
 
 cache_handler = FlaskSessionCacheHandler(session)

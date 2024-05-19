@@ -22,42 +22,70 @@
     />
   </head>
   <body>
-    <div class="container">
-      <div class="text-center">
-        <!-- Title -->
-        <h1 class="mt-4 mb-0 fw-bold">
-          {{ current_month }} {{ current_year }}
-        </h1>
-        <h1 class="mb-3 fw-bold">Spotify Wrapped</h1>
-
-        <!-- Link Options -->
-        <a
-          class="me-4"
-          style="text-decoration: none"
-          href="{{ url_for('top_artists') }}"
-          >Artists</a
-        >
-        <a style="text-decoration: underline" href="{{ url_for('top_songs') }}"
-          >Songs</a
-        >
-
-        <!-- Subtitle -->
-        <h2 class="mt-4 mb-4 fw-bold">My Top Songs</h2>
+    <section id="top-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 text-center">
+            <!-- Title -->
+            <h1 class="mt-4 mb-0 fw-bold">
+              {{ current_month }} {{ current_year }}
+            </h1>
+            <h1 class="mb-3 fw-bold">Spotify Wrapped</h1>
+            <!-- Link Options -->
+            <a
+              class="me-4"
+              style="text-decoration: none"
+              href="{{ url_for('top_artists') }}"
+              >Artists</a
+            >
+            <a
+              style="text-decoration: underline"
+              href="{{ url_for('top_songs') }}"
+              >Songs</a
+            >
+            <!-- Subtitle -->
+            <h2 class="mt-4 mb-4 fw-bold">My Top Songs</h2>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Songs List -->
-      <div class="container top_list">
+    <section id="ranking">
+      <div class="container">
         {% for track in top_tracks %}
-        <div class="item">
-          <h3 class="fw-bold">#{{ loop.index }}</h3>
-          <img src="{{ track.img }}" alt="Track Cover Image" />
-          <div class="track-details">
-            <h4 class="fw-bold">{{ track.name }}</h4>
-            <h5 class="artist-name">{{ track.artist }}</h5>
+        <div class="row mb-2 justify-content-center align-items-center">
+          <!-- Rank Number -->
+          <div class="col-1 col-md-2 text-end" style="padding: 0">
+            <h3 class="fw-bold">#{{ loop.index }}</h3>
+          </div>
+          <!-- Track Image -->
+          <div class="col-1 col-md-2 col-lg-1 text-center image_container">
+            <img
+              class="img-fluid"
+              src="{{ track.img }}"
+              alt="Track Cover Image"
+            />
+          </div>
+          <!-- Track Details -->
+          <div class="col-5 col-lg-4 text-start">
+            <div class="row mb-2 justify-content-center align-items-center">
+              <!-- Track Name -->
+              <div class="col-12" style="padding: 0">
+                <h4 class="fw-bold top-song-name" style="display: block">
+                  {{ track.name }}
+                </h4>
+              </div>
+              <!-- Track Artist -->
+              <div class="col-12" style="padding: 0">
+                <h5 class="top-song-artist" style="display: block">
+                  {{ track.artist }}
+                </h5>
+              </div>
+            </div>
           </div>
         </div>
         {% endfor %}
       </div>
-    </div>
+    </section>
   </body>
 </html>
