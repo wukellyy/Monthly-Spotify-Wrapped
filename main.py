@@ -17,8 +17,8 @@ load_dotenv()
 
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-REDIRECT_URI = "http://KEWWWY.pythonanywhere.com/callback"
-# REDIRECT_URI = "http://localhost:5000/callback"
+# REDIRECT_URI = "http://KEWWWY.pythonanywhere.com/callback"
+REDIRECT_URI = "http://localhost:5000/callback"
 SCOPE = "user-top-read"
 
 cache_handler = FlaskSessionCacheHandler(session)
@@ -82,7 +82,6 @@ def top_songs():
         tracks.append({"name": track["name"], "artist": artists_names, "img": album_image_url})
 
     return render_template("top_songs.html", current_month=current_month, current_year=current_year, top_tracks=tracks)
-
 
 @app.route("/logout")
 def logout():

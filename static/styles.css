@@ -72,3 +72,30 @@ a {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--max-lines);
 }
+
+@media (max-width: 576px) {
+  #top-section h1 {
+    font-size: 1.8rem;
+  }
+
+  a {
+    font-size: 1.1rem;
+  }
+
+  #top-section h2 {
+    font-size: 1.5rem;
+  }
+
+  #ranking h3 {
+    font-size: 1.8rem;
+  }
+
+  .top-artist-name,
+  .top-song-name {
+    font-size: 1rem;
+  }
+
+  .top-song-artist {
+    font-size: 0.8rem;
+  }
+}
