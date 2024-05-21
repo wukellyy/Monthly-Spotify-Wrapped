@@ -86,7 +86,7 @@ sp_oauth = SpotifyOAuth(
 )
 ```
 
-### Token
+### Access Token
 
 When a user visits the application for the first time, they will be redirected to Spotify to log in and authorize the application. After authorization, Spotify will redirect the user back to the app with an authorization code, which can be exchanged for an `access token`.
 
