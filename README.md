@@ -123,4 +123,4 @@ Once authenticated, you can use the Spotify Web API to fetch various data such a
       print(track['name'])
   ```
 
-Check out both [Spotipy Documentation](https://spotipy.readthedocs.io/en/2.22.1/) and [Spotify Web API Documentation](https://developer.spotify.com/documentation/web-api) to see what methods are offered, and how the returned results are formated.
+Check out both [Spotipy Documentation](https://spotipy.readthedocs.io/en/2.22.1/) and [Spotify Web API Documentation](https://developer.spotify.com/documentation/web-api) to see what methods are offered, and how the returned results are formatted.
