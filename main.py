@@ -10,6 +10,8 @@ import os
 
 from datetime import datetime
 
+from werkzeug.exceptions import BadRequestKeyError
+
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.urandom(64)
 
@@ -27,7 +29,8 @@ sp_oauth = SpotifyOAuth(
     client_secret=CLIENT_SECRET,
     redirect_uri=REDIRECT_URI,
     scope=SCOPE,
-    cache_handler=cache_handler
+    cache_handler=cache_handler,
+    show_dialog=True
 )
 sp = Spotify(auth_manager=sp_oauth)
 
@@ -40,8 +43,12 @@ def index():
 
 @app.route("/callback")
 def callback():
-    sp_oauth.get_access_token(request.args["code"])
-    return redirect(url_for('top_artists'))
+    try:
+        sp_oauth.get_access_token(request.args["code"])
+        return redirect(url_for('top_artists'))
+    except BadRequestKeyError:
+        # Handle the case where the user cancels the authorization process
+        return redirect(url_for('index'))
 
 @app.route("/top_artists")
 def top_artists():
