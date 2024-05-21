@@ -27,7 +27,7 @@ sp_oauth = SpotifyOAuth(
     client_secret=CLIENT_SECRET,
     redirect_uri=REDIRECT_URI,
     scope=SCOPE,
-    cache_handler=cache_handler,
+    cache_handler=cache_handler
 )
 sp = Spotify(auth_manager=sp_oauth)
 
