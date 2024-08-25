@@ -2,7 +2,9 @@
 
 A Flask application that utilizes the Spotify Web API to create a mini Spotify Wrapped, allowing Spotify users to see their top artists and top songs for the current month.
 
-You can access the live version of this application at [this link](https://kewwwy.pythonanywhere.com/top_artists).
+~~You can access the live version of this application at [this link](https://kewwwy.pythonanywhere.com/top_artists).~~
+
+Note: I seems like users need to have their Spotify account email manually added in the User Management tab of the Spotify Developer Dashboard to access the live version of this application. I am currently working on a solution to streamline this process.
 
 ## Features
 
